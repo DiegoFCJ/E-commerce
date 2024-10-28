@@ -1,0 +1,45 @@
+<div class="cont-cust-table">
+  <app-dynamic-table-data-edit
+    [selection]="userSelection"
+    [columnsToDisplay]="userColumnsToDisplay"
+    [dataSource]="userDataSource"
+  ></app-dynamic-table-data-edit>
+  <!-- Row with Button -->
+  <div
+    class="mat-elevation-z8 cust-btn-sect-style"
+    style="text-align: center; padding: 10px; background-color: white"
+  >
+    <button
+      style="cursor: pointer; align-items: center; justify-content: end"
+      matTooltip="Modifica Tabella"
+      type="submit"
+      mat-icon-button
+      (click)="fetchData(userDataSource, 'user')"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="cont-cust-table">
+  <app-dynamic-table-data-edit
+    [selection]="anagraphicSelection"
+    [columnsToDisplay]="anagraphicColumnsToDisplay"
+    [dataSource]="anagraphicDataSource"
+  ></app-dynamic-table-data-edit>
+  <!-- Row with Button -->
+  <div
+    class="mat-elevation-z8 cust-btn-sect-style"
+    style="text-align: center; padding: 10px; background-color: white"
+  >
+    <button
+      style="cursor: pointer; align-items: center; justify-content: end"
+      matTooltip="Modifica Tabella"
+      type="submit"
+      mat-icon-button
+      (click)="fetchData(anagraphicDataSource, 'anagraphic')"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+
+  
+  tr td div{
+    width: 40vw !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .custom-full-width{    
+    display: flex;
+    flex-direction: row;
+    width: 40vw !important;
+  }
+  
+  table {
+      min-width: 70vw;
+    }
+    
+    .btn-update-anag{
+      margin-inline: 10px;
+    }
+    
+  .green-bg{
+    color: green;
+  }
+  
+  .red-bg{
+    color: red;
+  }
+  
+  .pass-case-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  
+    .pass-case-icons-for{
+  
+      mat-icon{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .displ-row-fix{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+  }

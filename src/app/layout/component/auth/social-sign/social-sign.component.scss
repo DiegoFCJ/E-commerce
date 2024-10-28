@@ -1,0 +1,35 @@
+.social-login {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+    margin-block: 20px;
+  }
+
+  .social-login p {
+    font-size: small;
+    border: solid 1px gray;
+    border-radius: 8px;
+    width: 180px;
+    height: 25px;
+    text-align: center;
+    padding-top: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .social-login p:hover {
+    transform: scale(110%);
+    background-color: adjust-color($color: #ffffff, $hue: 0, $saturation: 0%, $lightness: -10%);
+  }
+
+  .social-login p:hover{
+    box-shadow: 0px 0px 5px #0015ff;
+  }
+  
+  .social-login p:active{
+    box-shadow: 0px 0px 3px #0015ff;
+    background-color: #0015ff;
+    color: white;
+    
+  }
+  

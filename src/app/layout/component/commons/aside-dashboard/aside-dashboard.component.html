@@ -1,0 +1,166 @@
+<mat-drawer-container
+  *ngIf="!routeChange.isInProfile()"
+  hasBackdrop="false"
+  class="general-style"
+>
+  <mat-drawer mode="side" [opened]="routeChange.opened">
+    <div class="sidenav-container add-more-m-top">
+      <button class="nav-button" routerLink="products">TUTTI I PRODOTTI</button>
+      <button class="nav-button" routerLink="products">TONER</button>
+      <button class="nav-button" routerLink="products">STAMPANTI</button>
+      <button class="nav-button" routerLink="products">DRUMS</button>
+      <button class="nav-button" routerLink="products">SERBATOI</button>
+      <button class="nav-button" routerLink="products">TESTINE</button>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<mat-drawer-container
+  *ngIf="routeChange.isInProfile()"
+  hasBackdrop="false"
+  class="general-style"
+>
+  <mat-drawer id="aside-w" mode="push" [opened]="routeChange.opened">
+    <div class="sidenav-container add-more-m-top">
+      <div class="top-user-info">
+        <button
+          (click)="handleImage()"
+          [style.background-image]="
+            'url(assets/users/profiles/' + user.id + '_profile.png)'
+              ? 'url(assets/users/profiles/' + user.id + '_profile.png)'
+              : ''
+          "
+          mat-icon-button
+          class="btn-circle"
+        ></button>
+        <div class="txt-top-user-info">
+          <p>{{ user.id }}</p>
+          <p>{{ user.email }}</p>
+          <p>{{ user.role }}</p>
+          <p>{{ user.username }}</p>
+        </div>
+      </div>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>person</mat-icon>
+              Dati Profilo
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="sidenav-container">
+            <button
+              class="nav-button sub-btn"
+              (click)="changeContent('viewProfileData')"
+            >
+              Modifica Profilo
+            </button>
+            <button
+              class="nav-button sub-btn"
+              (click)="changeContent('viewAddressesData')"
+            >
+              Modifica Indirizzi
+            </button>
+            <button class="nav-button sub-btn" (click)="deleteAccount()">
+              Elimina Il Tuo account
+            </button>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          class="bord-top"
+          (opened)="setOpenLastDr()"
+          (closed)="setCloseLastDr()"
+          [ngClass]="isOpenedCheck ? 'change-bottom-box' : 'set-botttom-none'"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>inventory</mat-icon>
+              Prodotti
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="sidenav-container">
+            <button
+              class="nav-button sub-btn"
+              routerLink="products"
+              (click)="setCloseLastDr()"
+            >
+              Vai a Tutti i Prodotti
+            </button>
+            <button
+              class="nav-button sub-btn"
+              (click)="changeContent('viewProfileData')"
+            >
+              Acquistati
+            </button>
+            <button
+              class="nav-button sub-btn"
+              (click)="changeContent('chartSellings')"
+            >
+              Grafico Acquisti
+            </button>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <button
+        class="nav-button bord-top"
+        [ngClass]="isOpenedCheck ? 'add-m-top' : 'set-m-0'"
+        (click)="changeContent('')"
+      >
+        <mat-icon>notifications</mat-icon>
+        Notifiche
+      </button>
+
+      <button
+        class="nav-button bord-top"
+        [ngClass]="isOpenedCheck ? 'add-m-top' : 'set-m-0'"
+        (click)="changeContent('privacy-info')"
+      >
+        <mat-icon>info</mat-icon>
+        Informativa sulla Privacy
+      </button>
+
+      <button
+        class="nav-button bord-top"
+        [ngClass]="isOpenedCheck ? 'add-m-top' : 'set-m-0'"
+        (click)="changeContent('')"
+      >
+        <mat-icon>receipt_long</mat-icon>
+        Visualizza Ricevute
+      </button>
+
+      <button
+        class="nav-button bord-top"
+        [ngClass]="isOpenedCheck ? 'add-m-top' : 'set-m-0'"
+        (click)="authUtilsService.logout()"
+      >
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+
+      <div style="width: 100%">
+        <mat-divider></mat-divider>
+        <button class="nav-button" (click)="routeChange.closeIt()">
+          <mat-icon>space_dashboard</mat-icon>
+          Chiudi Dashboard
+        </button>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content [ngClass]="routeChange.opened ? 'subtract-width' : ''">
+    <div [@fadeInOutAnimation]>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

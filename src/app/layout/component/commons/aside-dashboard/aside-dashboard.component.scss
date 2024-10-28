@@ -1,0 +1,131 @@
+.general-style{
+  
+  mat-drawer {
+    position: fixed;
+  }
+
+  .add-more-m-top{
+    margin-top: 8vh !important;
+  }
+  
+  .sidenav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  .nav-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-width: 250px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    height: 48px;
+    outline: none;
+    transition: 0.2s;
+    font-size: medium;
+    color: #212121;
+    text-align: start;
+    padding-left: 24px;
+  }
+
+  .nav-button:hover {
+    background-color: #f3f3f3;
+  }
+}
+
+mat-drawer-content{
+  background-color: rgb(238, 238, 238);
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.btn-circle {
+  color: black;
+  margin-bottom: 2vh;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(241, 241, 241, 0.5);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border: 2px solid #e9e9e9 !important;
+}
+
+.top-user-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;  
+
+  button{
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.txt-top-user-info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: medium;
+}
+
+.last-btn{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 
+      0px 3px 1px -2px rgba(0, 0, 0, 0.2), 
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 
+      0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.bord-top{
+  border-top: 0.1px solid rgb(238, 238, 238) !important;
+}
+
+.change-bottom-box{
+  box-shadow: 
+    0px 3px 1px -2px rgba(0, 0, 0, 0.2), 
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.set-botttom-none{
+  box-shadow: none !important;
+}
+
+
+mat-icon{
+  padding-right: 10px;
+}
+
+.sub-btn{
+  padding-left: 33px !important;
+}
+
+.set-m-0{
+  margin-top: 0 !important;
+}
+
+.add-m-top{
+  margin-top: 2vh !important;
+}
+
+.subtract-width{
+  width: calc(101% - var(--aside-width-from-drawer)) !important;
+}
+
+.bg-color-opened{
+  background-color: rgba(241, 241, 241, 0.5);
+}
+
+mat-accordion{
+  width: 100%;
+}

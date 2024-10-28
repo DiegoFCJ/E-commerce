@@ -1,0 +1,136 @@
+<div class="flex">
+  <div 
+    class="img-home" 
+    [@fadeInOutAnimation]="currentIndex"
+    [style.backgroundImage]="'url(' + imageUrl + ')'"
+    >
+  </div>
+
+  <div class="body">
+      <div class="presentation">
+          <div class="title-question">PERCHÈ SCEGLIERCI</div>
+          <div class="content-question">
+              <div class="content-sentence">
+                  <div class="icon">
+                      <mat-icon>stars</mat-icon>
+                  </div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="content-sentence">
+                  <div class="icon">
+                      <mat-icon>verified_user</mat-icon>
+                  </div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+              </div>
+              <div class="content-sentence">
+                  <div class="icon">
+                      <mat-icon>lock</mat-icon>
+                  </div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+          </div>
+      </div>
+
+      <div class="first-part">
+        <div class="index">
+            <div class="hr-pos">
+                <h1>NUOVI PRODOTTI</h1>
+                <hr/>
+            </div>
+        </div>
+        <div 
+            class="aside-tab material-shadow-hover"
+            [ngClass]="!nPdisplay ? 'no-prods' : ''"
+            (click)="routeService.goToAllProducts()"
+            *ngIf="!routeService.opened">
+            <div class=" all-txt-new-prods">
+                <span class="side-new-prods">
+                    ESPLORA LE 
+                </span>
+                <span class="side-new-prods">
+                    NOSTRE <b>OFFERTE</b>
+                </span>
+            </div>
+        </div>
+
+        <div *ngIf="!nPdisplay" class="cards-second">
+            <div style="margin-right: 10px; display: flex; flex-direction: row; align-items: center;">
+                <h1 style="margin-right: 10px;">OOPS!</h1>
+                <h2>NON CI SONO PRODOTTI AL MOMENTO...</h2>
+            </div>
+        </div>
+
+        <div class="cards-first" *ngIf="nPdisplay">
+            <app-cards [product]="product" *ngFor="let product of newProducts"></app-cards>
+        </div>
+      </div>
+
+      <div class="bottom-tab material-shadow-hover"
+        (click)="routeService.goToAllProducts()">
+        <div class="all-txt-new-prods">
+            <span class="side-new-prods">
+                ESPLORA LE
+            </span>
+            <span class="side-new-prods">
+                NOSTRE <b>OFFERTE</b>
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="first-part-v2">
+        <div class="index">
+            <div class="hr-pos">
+                <h1>PRODOTTI POPOLARI</h1>
+                <hr/>
+            </div>
+            <div class="btns-position" *ngIf="pPdisplay">
+                <button mat-icon-button (click)="navigateBefore(this.pageSize, currentPage)">
+                    <mat-icon>navigate_before</mat-icon>
+                </button>
+                <span>{{currentPage}} di {{pagesTotal(5)}}</span>
+                <button mat-icon-button (click)="navigateNext(this.pageSize, currentPage)">
+                    <mat-icon>navigate_next</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <div>
+            <div *ngIf="!pPdisplay" class="cards-second">
+                <div style="margin-right: 10px; display: flex; flex-direction: row; align-items: center;">
+                    <h1 style="margin-right: 10px;">OOPS!</h1>
+                    <h2>NON CI SONO PRODOTTI AL MOMENTO...</h2>
+                </div>
+            </div>
+
+            <div class="cards-second" *ngIf="pPdisplay">
+                <app-cards [product]="product" *ngFor="let product of visibleProducts"></app-cards>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="second-part">
+        <app-cards [product]="product" *ngFor="let product of popularProducts"></app-cards>
+      </div>
+      <div class="third-part">
+          <div class="newsletter">
+              <h2>NEWSLETTER</h2>
+              <p>Subscribe to our newsletter <br> 
+                and stay updated on the latest news!</p>
+              <div class="button-news">
+                  <button class="subscription">SUBSCRIBE</button>
+                  <button class="unsubscribe">UNSUBSCRIBE</button>
+              </div>
+          </div>
+          <div class="img-bottom"></div>
+      </div>
+  </div>  
+</div>

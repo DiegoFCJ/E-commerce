@@ -1,0 +1,64 @@
+[debug] [2024-03-04T13:18:28.773Z] ----------------------------------------------------------------------
+[debug] [2024-03-04T13:18:28.774Z] Command:       /home/diego/.nvm/versions/node/v16.20.2/bin/node /home/diego/.nvm/versions/node/v16.20.2/bin/firebase deploy
+[debug] [2024-03-04T13:18:28.775Z] CLI Version:   12.0.0
+[debug] [2024-03-04T13:18:28.775Z] Platform:      linux
+[debug] [2024-03-04T13:18:28.775Z] Node Version:  v16.20.2
+[debug] [2024-03-04T13:18:28.775Z] Time:          Mon Mar 04 2024 14:18:28 GMT+0100 (Central European Standard Time)
+[debug] [2024-03-04T13:18:28.775Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-04T13:18:28.832Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-04T13:18:28.832Z] > authorizing via signed-in user (diegoeffe96@gmail.com)
+[debug] [2024-03-04T13:18:28.833Z] [iam] checking project officeoasis-d1ba6 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-04T13:18:28.834Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/officeoasis-d1ba6:testIamPermissions [none]
+[debug] [2024-03-04T13:18:28.835Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/officeoasis-d1ba6:testIamPermissions x-goog-quota-user=projects/officeoasis-d1ba6
+[debug] [2024-03-04T13:18:28.835Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/officeoasis-d1ba6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T13:18:29.668Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/officeoasis-d1ba6:testIamPermissions 200
+[debug] [2024-03-04T13:18:29.668Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/officeoasis-d1ba6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T13:18:29.669Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/officeoasis-d1ba6 [none]
+[debug] [2024-03-04T13:18:30.115Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/officeoasis-d1ba6 200
+[debug] [2024-03-04T13:18:30.115Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/officeoasis-d1ba6 {"projectId":"officeoasis-d1ba6","projectNumber":"895762992454","displayName":"OfficeOasis","name":"projects/officeoasis-d1ba6","resources":{"hostingSite":"officeoasis-d1ba6"},"state":"ACTIVE","etag":"1_e321e0d4-5271-4888-8aec-98fdf5643301"}
+[info] 
+[info] === Deploying to 'officeoasis-d1ba6'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-03-04T13:18:30.120Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/officeoasis-d1ba6/versions [none]
+[debug] [2024-03-04T13:18:30.120Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/officeoasis-d1ba6/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-03-04T13:18:31.818Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/officeoasis-d1ba6/versions 200
+[debug] [2024-03-04T13:18:31.818Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/officeoasis-d1ba6/versions {"name":"projects/895762992454/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[officeoasis-d1ba6]: beginning deploy... 
+[info] i  hosting[officeoasis-d1ba6]: found 26 files in dist/OfficeOasis 
+[debug] [2024-03-04T13:18:31.826Z] [hosting] uploading with 200 concurrency
+[debug] [2024-03-04T13:18:31.832Z] [hosting] hash cache [ZGlzdC9PZmZpY2VPYXNpcw] stored for 26 files
+[debug] [2024-03-04T13:18:31.832Z] [hosting][hash queue][FINAL] {"max":3,"min":0,"avg":0.11538461538461539,"active":0,"complete":26,"success":26,"errored":0,"retried":0,"total":26,"elapsed":5}
+[debug] [2024-03-04T13:18:31.832Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/895762992454/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f:populateFiles [none]
+[debug] [2024-03-04T13:18:31.832Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/895762992454/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f:populateFiles {"files":{"/3rdpartylicenses.txt":"99bfa06704317bd9160566d563dd2cf6fe37aaa19527479a94aa7f14cdd76bf0","/519.1432e67419424308.js":"34eb5537a72cd4f35554fc223541c208496231304eba48adaca8d99010fabe91","/discover-new-prods-home.afde13cb9198a61f.jpg":"59ba9798d557248bb23208e3fce94a8cd312a141f8cad17fcaa6ebcbf69363df","/favicon.ico":"e3f5103b6a80946807d4161f134e2a09d15051df1500abee2bc81ea9708aafa3","/index.html":"4d8189983e942346b5f9f814645cc04c51aaf8d732c96f60d56a40c045afee43","/main.a0913f05f2166f33.js":"406bb35576e9eddc2cd47bcfcb7fa2230200cb24031e2429b5f97e6fdc915d10","/polyfills.ed20cbbbcde9dcfd.js":"f3b95561ac9deac25535aaa74ad9b8335843e5e8890a00f727c32594cfdb9bbb","/popular-prods-home.efddaf870cbd9565.png":"bbb09986fda4347ec364fefaa88f18c78fadb237983832a80d918decee1b2b75","/runtime.30c793cc93fbbb63.js":"db7ef4e2152abde04ccabb3ac3338b15a6b8cb43260614acac614019f552db72","/side-new-prods-home.0b6969f197a53cad.jpg":"3944aa26f8751c81ad018674886227e500d35252e21e0350bd6e82082bca8007","/styles.4525b488eb3556f6.css":"6bda82bacbeafa01e450ce84814723dab8c1b88328d29fe7d390c05c31b7ce25","/assets/auth/side-auth.png":"67dc392cbfdfe46e09b7c307b4438a7e48e63e309166731bafef8a43b96705ea","/assets/home/discover-new-prods-home.jpg":"59ba9798d557248bb23208e3fce94a8cd312a141f8cad17fcaa6ebcbf69363df","/assets/home/popular-prods-home.png":"bbb09986fda4347ec364fefaa88f18c78fadb237983832a80d918decee1b2b75","/assets/home/side-new-prods-home.jpg":"3944aa26f8751c81ad018674886227e500d35252e21e0350bd6e82082bca8007","/assets/home/top-hero-home-1.png":"400c59d4a7c2f2084020320ca9cd4e094a23c029b914eacb361915b9965117cd","/assets/home/top-hero-home-2.jpg":"b99772d45b9716dceb36d224a5c86a85174987859a487eaaa4a476ceda2d052d","/assets/home/top-hero-home-3.jpg":"d614524e568ececc88e5629981e6a557eaefd17953e48a081a36721466111277","/assets/home/top-hero-home-4.jpg":"0dda833e99253d0153991fd141743f9806efd1743bd3640c4681dcaeeb2f06ae","/assets/home/top-hero-home-5.jpg":"f726877ea6b592c18a49e1a6daef951407d5ca940d69812baf15d48d8cabbb19","/assets/home/top-hero-home-6.jpg":"c01c7379e449eb866fdce1962cb2709278f04004d80cc742015a7b10a84439ff","/assets/home/top-hero-home-7.png":"87488c35b2267fca0c37edeaf4af89a148148a885ea5338c787a6e4e0b3aeced","/assets/prods/joke.jpg":"9395f3bf7d2875b80cb0cf5b62e0b2931acd97950888a5d4fd1106b1035244cd","/assets/users/profiles/1_profile.png":"943ffeb0d56eb2a2c607a16af5aabc9c493c774f5bc6e54be71cf99588872123","/assets/users/profiles/profile_image.png":"c01c7379e449eb866fdce1962cb2709278f04004d80cc742015a7b10a84439ff","/404.html":"b7bab6b83fa074653ff28c8d2a64135d3434575f70a12ab3d3ba8080461b9537"}}
+[debug] [2024-03-04T13:18:32.840Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/895762992454/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f:populateFiles 200
+[debug] [2024-03-04T13:18:32.840Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/895762992454/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f/files"}
+[debug] [2024-03-04T13:18:32.840Z] [hosting][populate queue][FINAL] {"max":1009,"min":1009,"avg":1009,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1009}
+[debug] [2024-03-04T13:18:32.841Z] [hosting] uploads queued: 0
+[debug] [2024-03-04T13:18:32.841Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1709558312841}
+[info] ✔  hosting[officeoasis-d1ba6]: file upload complete 
+[debug] [2024-03-04T13:18:32.841Z] [hosting] deploy completed after 1021ms
+[debug] [2024-03-04T13:18:32.842Z] [
+  {
+    "config": {
+      "public": "dist/OfficeOasis",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "officeoasis-d1ba6"
+    },
+    "version": "projects/895762992454/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f"
+  }
+]
+[info] i  hosting[officeoasis-d1ba6]: finalizing version... 
+[debug] [2024-03-04T13:18:32.844Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f updateMask=status%2Cconfig
+[debug] [2024-03-04T13:18:32.844Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/officeoasis-d1ba6/versions/06863efbe0a9be5f {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}

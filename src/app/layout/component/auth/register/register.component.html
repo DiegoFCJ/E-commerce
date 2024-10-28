@@ -1,0 +1,78 @@
+<div class="flex">
+  <div class="register-image">
+    <img src="../../../../../assets/auth/side-auth.png" />
+  </div>
+  <div class="form">
+    <h1>Registrati</h1>
+    <p style="margin-top: 5px">Entra nella nostra community!</p>
+  
+    <app-social-sign [signType]="signType"></app-social-sign>
+    
+    <p style="color: gray; margin-bottom: 20px">- o -</p>
+    <form [formGroup]="userFormRegister" (ngSubmit)="onSubmit()">
+      <div class="form-2">
+        <p>
+          <mat-form-field style="width: 385px" appearance="outline">
+            <mat-label>Email </mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              type="email"
+              id="email"
+              formControlName="email"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="form-1">
+        <p>
+          <mat-form-field class="form-input" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              placeholder="Username"
+              id="username"
+              formControlName="username"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="form-input" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              id="password"
+              type="password"
+              formControlName="password"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+
+      <div class="checkbox">
+        <mat-checkbox formControlName="checkboxControl" style="font-size: 0.7em">
+          <a (click)="notify.termsAndCondition()">Informativa sulla privacy</a>
+          <p>
+            Ho letto e accetto i Termini di Servizio e la Polizza sulla Privacy
+          </p>
+        </mat-checkbox>
+      </div>
+
+      <button
+        type="submit"
+        class="submitbutton buttons-hover"
+        mat-flat-button
+        color="primary"
+        [disabled]="!userFormRegister.valid"
+      >
+        Crea Account
+      </button>
+    </form>
+
+    <div class="redirectLink">
+      <p>Hai gia un account?</p>
+      <p class="buttons-hover" style="color: #007bff" routerLink="/OfficeOasis/auth/login">Accedi!</p>
+    </div>
+  </div>
+</div>

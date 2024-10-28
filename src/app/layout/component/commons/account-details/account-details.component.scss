@@ -1,0 +1,60 @@
+.dettagliForm {
+    background-color:#ffffff;
+    padding-left: 3em;
+    padding-right: 3rem;
+    padding-top: 2em;
+    padding-bottom: 2em;
+ }
+
+.btSubmit {
+    text-align: end;
+}
+.btn {
+    font-weight: 400;
+    font-size: 15px;
+    border: 0;
+    position: relative;
+    top: 30%;
+    background-color: #AA1010;
+}
+
+.btn1 {
+    font-weight: 400;
+    font-size: 15px;
+    border: 1px solid red;
+    border-radius: 5%;
+    background-color: white;
+    color: red;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.linea {
+    margin-top: 1em;
+}
+
+.sottotitoli {
+    font-weight: bold;
+    font-size: 14px;
+    color: #858585;    
+}
+
+.labelForm {
+    color:#858585; 
+    font-size: 10px; 
+    font-weight: 300;
+    padding-left: 20px;
+}
+
+.bi {
+    position: relative;
+    top: -50%;
+    left: 95%;
+}
+
+
+.mat-dialog-container {
+    position: relative;
+    left: 50%;
+}

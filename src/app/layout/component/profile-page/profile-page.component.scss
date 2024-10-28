@@ -1,0 +1,36 @@
+.tile-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h4{
+      font-size: 40px;
+      margin-top: 90px;
+  }
+
+}
+
+.center-creation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addr-cust-displ{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h4, app-add-new-addr-btn{
+  margin-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+app-add-new-addr-btn{
+  margin-top: 30px;
+}

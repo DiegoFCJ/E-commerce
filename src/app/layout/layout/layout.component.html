@@ -1,0 +1,98 @@
+<div class="container">
+  <header>
+    <div style="display: flex">
+
+      <button
+        style="margin-inline: 5px; cursor: pointer"
+        *ngIf="routeService.shouldShowElement(router.url)"
+        type="button"
+        matTooltip="Menu"
+      
+        mat-icon-button
+        (click)="routeService.toggleSideNav()"
+        >
+          <mat-icon style="color: white">menu</mat-icon>
+      </button> 
+
+      <p 
+        routerLink="home" 
+        matTooltip="Home"
+        class="nomeAzienda">
+        OfficeOasis
+      </p>
+
+    </div>
+    <div *ngIf="routeService.dontShowNavSearch(router.url)">
+      <app-search-bar></app-search-bar>
+    </div>
+
+    <section class="usercontrol">
+      <div class=" fake-mat">
+        <button 
+          [matBadgeHidden]="cartUtilsService.hidden"
+          matBadgeSize="small"
+          matBadge="{{giveLength()}}" 
+          matBadgeOverlap="true"  
+          matBadgeColor="warn"
+          class="btn-css-remover"
+          routerLink="cart" 
+          matTooltip="Carrello">
+          <mat-icon class="iconcolor"> local_mall</mat-icon>
+        </button>
+      </div>
+
+      <button 
+        matTooltip="{{routeService.isInLogin() ? 'Registrati' : 'Accedi'}}"
+        mat-icon-button 
+        *ngIf="!authUtilsService.isLoggedIn()" 
+        routerLink="auth/{{routeService.isInLogin() ? 'register' : 'login'}}">
+        <mat-icon 
+          class="iconcolor"
+          >{{routeService.isInLogin() ? 'app_registration' : 'login'}}</mat-icon> 
+      </button>
+
+      <button 
+        matTooltip="Apri Dashboard"
+        mat-icon-button 
+        (click)="routeService.keepItOpened()"
+        *ngIf="
+          authUtilsService.isLoggedIn() && 
+          !routeService.opened && 
+          routeService.isInProfile()" 
+        class="closed-dash"
+        >
+        <mat-icon 
+          class="iconcolor"
+          >grid_view</mat-icon>
+      </button>
+
+      <div *ngIf="authUtilsService.isLoggedIn()" >
+
+        <button
+          matTooltip="Chiudi Dashboard"
+          mat-icon-button
+          class="opened-dash"
+          (click)="routeService.closeIt()"
+          *ngIf="
+            authUtilsService.isLoggedIn() && 
+            routeService.opened && 
+            routeService.isInProfile()"
+          >
+          <mat-icon>space_dashboard</mat-icon>
+        </button>
+      
+        <app-drop-down-menu></app-drop-down-menu>
+      </div>
+
+      <section></section>
+      <section></section>
+      <section></section> 
+    </section>
+  </header>
+
+  <div class="page-body edited-overflow">
+    <app-aside-dashboard></app-aside-dashboard>
+    <app-footer></app-footer>
+  </div>
+
+</div>

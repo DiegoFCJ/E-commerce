@@ -1,0 +1,49 @@
+<div 
+    class="btns-position" 
+    *ngIf="products">
+
+    <button 
+        matTooltip="Pagina precedente"
+        mat-icon-button 
+        (click)="navigateBefore()"
+        (click)="updateListChild()">
+      <mat-icon><b>navigate_before</b></mat-icon>
+    </button>
+
+    <span style="margin-left: 48px;"><b>{{currentPage}}</b> di <b>{{pagesTotal()}}</b></span>
+
+    <button 
+      mat-icon-button 
+      matTooltip="Numero di prodotti"
+      [matMenuTriggerFor]="menu" 
+      >
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button 
+        mat-icon-button 
+        matTooltip="Prossima pagina"
+        (click)="navigateNext()"
+        (click)="updateListChild()">
+      <mat-icon><b>navigate_next</b></mat-icon>
+    </button>
+</div>
+
+<mat-menu #menu="matMenu">
+  <div *ngFor="let n of customPageSizeChanger">
+    <button 
+        *ngIf="n - 5 <= prodsLength"
+        mat-menu-item 
+        (click)="pageTotalSize = n"
+        (click)="updateListChild()"
+        (click)="backOnFirstPage()"
+        >
+        <mat-icon
+          [style.color]="pageTotalSize === n ? 'green' : ''">
+          {{pageTotalSize === n ? 'check_circle_outline' : 'radio_button_unchecked'}}
+        </mat-icon>
+      <span><b>{{n}}</b> Prodotti</span>
+    </button>
+  </div>
+</mat-menu>
+ 

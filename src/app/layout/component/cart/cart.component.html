@@ -1,0 +1,58 @@
+<div class="flex">
+  <div class="cart">
+    <div class="emptyCart" *ngIf="DTOList.length === 0">
+      <b>IL TUO CARRELLO E' VUOTO</b>
+      <p>Corri ad acquistare i nostri prodotti!</p>
+    </div>
+    <div *ngIf="DTOList.length > 0" class="cartHeader">
+      <p>PRODUCT</p>
+      <p>CATEGORY</p>
+      <p>PRICE</p>
+      <p>REMOVE</p>
+    </div>
+    <div *ngFor="let item of DTOList">
+      <div class="item">
+        <p>{{ item.productDTO.name }}</p>
+        <p>{{ item.productDTO.category }}</p>
+        <div>
+          <p *ngIf="item.productDTO.discount === 0">
+            &euro;{{ item.productDTO.price }}
+          </p>
+          <del *ngIf="item.productDTO.discount > 0"
+            >&euro;{{ item.productDTO.price }}</del
+          >
+          <p *ngIf="item.productDTO.discount > 0">
+            &euro;{{
+              (
+                item.productDTO.price -
+                (item.productDTO.price * item.productDTO.discount) / 100
+              ).toFixed(2)
+            }}
+          </p>
+        </div>
+        <button
+          matTooltip="Remove From Cart"
+          class="delete"
+          mat-icon-button
+          color="warn"
+          (click)="removeFromCart(item.productDTO.id)"
+        >
+          <mat-icon>delete_forever </mat-icon>
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+    <div *ngIf="DTOList.length > 0" class="cartFooter">
+      <div style="text-align: start">
+        <p>SUBTOTAL</p>
+        <p>SHIPPING</p>
+        <p>TOTAL</p>
+      </div>
+      <div style="text-align: end">
+        <p>&euro; {{ subtotal.toFixed(2) }}</p>
+        <p>&euro; {{ shipping.toFixed(2) }}</p>
+        <p>&euro; {{ total.toFixed(2) }}</p>
+      </div>
+    </div>
+  </div>
+</div>

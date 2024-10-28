@@ -1,0 +1,72 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-height: 95vh;
+}
+
+.cart {
+  margin-top: 125px;
+  .cartHeader,
+  .item,
+  .cartFooter {
+    width: 500px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+  }
+  .cartHeader {
+    margin-bottom: 20px;
+  }
+  .emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+    height: 60px;
+    justify-content: space-between;
+    animation-name: emptyCart;
+    animation-duration: 0.4s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    transition: 0.5s;
+  }
+
+  .item {
+    margin-block: 10px;
+    align-items: center;
+    animation-name: itemFade;
+    animation-duration: 0.1s;
+    transition: 0.1s;
+    .delete {
+      min-width: 10px;
+      mat-icon {
+        margin: unset;
+      }
+    }
+  }
+
+  .item:hover {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes emptyCart {
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes itemFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
