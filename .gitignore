@@ -44,3 +44,6 @@ Thumbs.db
 
 # Environments
 src/environments/environment.ts
+.github
+.firebase
+.angular
