@@ -2,11 +2,7 @@
 
 **Version:** 0.0.1
 
-OfficeOasis is a frontend project built with Angular, designed to provide a seamless and dynamic user experience for office management tools. With a modern UI and server-side rendering capabilities, OfficeOasis offers fast load times and efficient interactions. The application is enhanced with a range of UI and data visualization components, and uses a custom favicon to give it a distinctive look.
-
-## 📸 Project Overview
-
-> **Add screenshots or videos here** to give users a visual overview of the application. Screenshots of main interfaces or data visualizations are recommended.
+OfficeOasis is project designed to provide a seamless and dynamic user experience for office management tools. With a modern UI and server-side rendering capabilities, OfficeOasis offers fast load times and efficient interactions. The application is enhanced with a range of UI and data visualization components, and uses a custom favicon to give it a distinctive look.
 
 ## 🚀 Technologies Used
 
