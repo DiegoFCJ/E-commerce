@@ -1,0 +1,79 @@
+header {
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 0px;
+  padding-inline: 10px;
+  background-color: #3d41ff;
+  box-shadow: 0px 0px 20px gray;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.sidenav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-button {
+  width: 250px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  height: 55px;
+  outline: none;
+  transition: 0.2s;
+  z-index: 20;
+}
+.nav-button:hover {
+  background-color: #bcb6ff;
+  color: white;
+}
+.nomeAzienda {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 35px;
+  margin: 0px;
+  margin-left: 10px;
+  margin-top: 0.3vh;
+  color: white;
+}
+
+.nomeAzienda:hover{
+  cursor: pointer;
+  filter: brightness(92%);
+  border-radius: 10px; /* Nuova forma del bordo al passaggio del mouse */
+}
+.usercontrol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.username{
+  color: white;
+  font-size: 2em;
+}
+p {
+  font-family: monospace;
+  font-weight: bolder;
+  color: white;
+}
+.iconcolor {
+  color: white;
+}
+
+.page-body{
+  height: calc(100%);
+  display: flex;
+  flex-direction: column
+}
+
+.opened-dash{
+  color: white;
+}
+
+.closed-dash{
+  color: white;
+  margin-right: -10px;
+}

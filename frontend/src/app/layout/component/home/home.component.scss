@@ -1,0 +1,300 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 95vh;
+
+  .space {
+    flex: 1;
+  }
+
+  .content {
+    height: 500px;
+    width: 100vw;
+    background-color: gainsboro;
+  }
+
+  .img-home {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4vh;
+    width: 100%;
+    height: 62vh;
+    background: url('../../../../assets/home/side-new-prods-home.jpg') no-repeat center / cover;
+  }
+
+  .body {
+    width: 80%;
+    max-width: 1220px;
+    min-width: 919px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+
+    .presentation {
+      margin-top: 5vh;
+      width: 100%;
+      max-width: 1220px;
+      height: 200px;
+      border: 5px solid rgb(70, 22, 22);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      .title-question {
+        margin-top: -22px;
+        width: 250px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(238, 238, 238);
+        color: #0015ff;
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      .content-question {
+        margin-top: -20px;
+        width: 100%;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .content-sentence {
+          width: 500px;
+          height: 150px;
+          margin: 5px;
+          font-size: 16px;
+          font-weight: 50;
+          padding: 20px;
+          text-align: center;
+
+          .icon {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .first-part,
+    .first-part-v2 {
+      width: 100%;
+      max-width: 1220px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      .index {
+        width: 1220px;
+        height: 30px;
+        margin-top: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+
+        .hr-pos {
+          display: flex;
+          flex-direction: column;
+
+          h1 {
+            font-size: 30px;
+          }
+
+          hr {
+            background-color: #c4c5ff;
+            margin-left: 0;
+            width: 150px;
+            text-align: start;
+            border: 2.5px solid #c4c5ff;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+          }
+        }
+
+        .btns-position {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          background-color: #c4c5ff;
+          border-radius: 50px;
+        }
+      }
+
+      .aside-tab {
+        width: 100vw;
+        max-width: 300px;
+        height: 432px;
+        margin-right: 20px;
+        background: url('../../../../assets/home/side-new-prods-home.jpg') no-repeat center / cover;
+        border-radius: 5px;
+
+        .all-txt-new-prods {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: #c4c5ff;
+          padding: 10px;
+          border-radius: 4px;
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+            0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
+
+          .side-new-prods {
+            font-size: large;
+          }
+        }
+      }
+
+      .cards-first,
+      .cards-second {
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: -20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    .bottom-tab {
+      width: 100%;
+      max-width: 1220px;
+      height: 220px;
+      margin: 140px 0 60px;
+      background: url('../../../../assets/home/discover-new-prods-home.jpg') no-repeat center / cover;
+      border-radius: 5px;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .all-txt-new-prods {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #c4c5ff;
+        margin-right: 15%;
+        padding: 15px;
+        border-radius: 4px;
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+          0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
+      }
+    }
+
+    .second-part {
+      width: 100%;
+      max-width: 1220px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0 -20px;
+    }
+
+    .third-part {
+      width: 100%;
+      max-width: 1220px;
+      height: 610px;
+      margin-top: 140px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .newsletter {
+        width: 40%;
+        height: 100%;
+        scale: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+          width: 100%;
+          font-size: 60px;
+          font-weight: 600;
+        }
+
+        p {
+          width: 600px;
+          font-size: 20px;
+        }
+
+        .button-news {
+          width: 660px;
+          height: 200px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          .subscription,
+          .unsubscribe {
+            width: 200px;
+            height: 40px;
+            border-radius: 5px;
+            border-style: none;
+            transition: 0.2s;
+            background-color: #c4c5ff;
+            margin-inline: 25px;
+
+            &:hover {
+              transform: scale(105%);
+              cursor: pointer;
+            }
+          }
+
+          .unsubscribe {
+            background-color: rgb(230, 230, 230);
+          }
+        }
+      }
+
+      .img-bottom {
+        width: 60%;
+        height: 100%;
+        scale: 95%;
+        background: url('../../../../assets/home/popular-prods-home.png') no-repeat center / contain;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .right-side-cards {
+    max-width: 1220px !important;
+
+    app-cards {
+      scale: 1.2;
+      // TODO problemi problemi problemi per lo scale!!
+      margin: 1.7rem;
+    }
+  }
+
+  .no-prods {
+    height: 60px !important;
+  }
+}

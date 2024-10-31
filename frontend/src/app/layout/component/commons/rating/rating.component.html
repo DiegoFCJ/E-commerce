@@ -1,0 +1,8 @@
+<div class="custom-rating">
+    <div 
+      *ngFor="let star of stars">
+      <mat-icon><!--[style.color]="getRatingColor(product.averageRating)"-->
+        {{ starsFill(star.position) }}
+      </mat-icon>
+    </div>
+  </div>

@@ -1,0 +1,26 @@
+<div class="social-login">
+
+    <div [ngSwitch]="signType">
+        <div *ngSwitchCase="'register'">
+            <p>
+                <app-google-signin 
+                    [signType]="signType" 
+                    [rememberMe]="rememberMe"
+                    (loginWithGoogle)="googleSignin($event)">
+                </app-google-signin>
+            </p>
+        </div>
+        <div *ngSwitchCase="'login'">
+            <p>
+                <app-google-signin 
+                    [signType]="signType" 
+                    [rememberMe]="rememberMe"
+                    (loginWithGoogle)="googleSignin($event)">
+                </app-google-signin>
+            </p>
+        </div>
+
+    </div>
+
+    <p>continua con facciabook</p>
+</div>

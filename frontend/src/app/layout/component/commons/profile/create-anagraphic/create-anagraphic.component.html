@@ -1,0 +1,91 @@
+<div class="cust-form-alignment">
+  <form [formGroup]="form" class="custom-form">
+    <mat-form-field class="custom-full-width">
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Nome"
+        formControlName="name"
+      />
+      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+        >Il nome è obbligatorio</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Cognome</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Cognome"
+        formControlName="surname"
+      />
+      <mat-error
+        *ngIf="form.get('surname')?.invalid && form.get('surname')?.touched"
+        >Il cognome è obbligatorio</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Data di Nascita</mat-label>
+      <input
+        matInput
+        [matDatepicker]="dp3"
+        placeholder="Data di Nascita"
+        formControlName="birthDate"
+      />
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3></mat-datepicker>
+      <mat-error
+        *ngIf="form.get('birthDate')?.invalid && form.get('birthDate')?.touched"
+        >La data di nascita è obbligatoria</mat-error
+      >
+      <mat-error *ngIf="form.get('birthDate')?.hasError('pattern')"
+        >Formato data non valido (yyyy-mm-dd)</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Genere</mat-label>
+      <mat-select placeholder="Genere" formControlName="gender">
+        <mat-option
+          *ngFor="let genderOption of genders"
+          [value]="genderOption"
+          >{{ genderOption }}</mat-option
+        >
+      </mat-select>
+      <mat-error
+        *ngIf="form.get('gender')?.invalid && form.get('gender')?.touched"
+        >Il genere è obbligatorio</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Nazionalità</mat-label>
+      <mat-select placeholder="Nazionalità" formControlName="nationality">
+        <mat-option *ngFor="let nation of nationalities" [value]="nation">{{
+          nation
+        }}</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="
+          form.get('nationality')?.invalid && form.get('nationality')?.touched
+        "
+        >La nazionalità è obbligatoria</mat-error
+      >
+    </mat-form-field>
+  </form>
+  <button
+    class="btn-create-anag"
+    mat-raised-button
+    color="primary"
+    (click)="fetchData()"
+  >
+    Crea
+  </button>
+</div>

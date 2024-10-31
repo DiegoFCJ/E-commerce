@@ -1,0 +1,28 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 95vh;
+  background-color: gainsboro;
+}
+.formcontainer {
+  margin-top: 60px;
+  background-color: white;
+  width: 850px;
+  height: 530px;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: unset;
+
+}
+.space {
+  flex: 1;
+}
+
+@media screen and (max-width: 850px) {
+  .formcontainer{
+    width: 450px;
+  }
+}

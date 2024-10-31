@@ -1,0 +1,61 @@
+<form 
+  *ngIf="routeService.shouldShowElement(router.url)" 
+  [formGroup]="searchForm"
+  (ngSubmit)="searchProducts()" 
+  class="searchbar"
+  [style.marginLeft]="routeService.dontShowNavSearch(router.url) ? '-130px' : '0'">
+    <input 
+      matInput
+      type="text"
+      formControlName="searchValue"
+      class="search-bar-input"
+      placeholder="Cerca qui i prodotti che ti interessano"
+      name="searchInput"
+      [style.width]="customWidth"
+      [style.height]="customHeight"
+    />
+    <div class="search-btn">
+      <p
+        class="filter-btn"
+        matTooltip="Filtra"
+        [matMenuTriggerFor]="menu"
+        >
+        <mat-icon>tune</mat-icon>
+      </p>
+      <p
+        class="search-btn"
+        matTooltip="Cerca"
+        (click)="searchProducts()" 
+        >
+        <mat-icon>search</mat-icon>
+      </p>
+    </div>
+</form>
+
+<mat-menu #menu="matMenu">
+  <button 
+    class="menu-title" 
+    mat-menu-item 
+    disabled="{{!isSelected()}}" 
+    (click)="giveUpOnFilters()"
+    >
+    <mat-icon>tune</mat-icon>
+    <h3>{{!isSelected() ? 'Filtra per:' : 'Togli il filtri'}}</h3>
+  </button>
+  <div *ngFor="let n of filters">
+      <button 
+          mat-menu-item 
+          (click)="selector(n.category)"
+          >
+          <mat-icon
+            [style.color]="!n.isChoosen ? '' : 'green'">
+            {{!n.isChoosen ? 'radio_button_unchecked' : 'check_circle_outline'}}
+          </mat-icon>
+          <span>
+            <b>
+              {{n.category}}
+            </b>
+          </span>
+      </button>
+    </div>
+</mat-menu>

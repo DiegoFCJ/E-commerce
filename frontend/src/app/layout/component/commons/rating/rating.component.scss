@@ -1,0 +1,10 @@
+.custom-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-inline: 10px;
+
+    mat-icon{
+      color: #3d41ff;
+    }
+  }

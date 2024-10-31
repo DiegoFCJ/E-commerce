@@ -1,0 +1,29 @@
+<div *ngIf="routeChange.shouldShowElement(router.url)">
+  <button 
+    style="color: white"
+    mat-icon-button 
+    matTooltip="Profilo"
+    [matMenuTriggerFor]="menu" 
+    >
+    <span class="usr-bedge">
+      {{ user.username ? user.username.charAt(0).toUpperCase() : ''}}
+    </span>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button 
+        mat-menu-item
+        routerLink="profile">
+      <mat-icon>person</mat-icon>
+      <span>Profilo</span>
+    </button>
+    <button 
+        mat-menu-item 
+        routerLink="home" 
+        (click)="authUtilsService.logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+
+</div>

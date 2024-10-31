@@ -1,0 +1,72 @@
+<div class="flex">
+  <div *ngIf="!product" class="product-detail">
+    <b>OOPS... non abbiamo trovato quello che stavi cercando</b>
+  </div>
+  <div *ngIf="product" class="product-detail">
+    <div class="product-images">
+      <div class="image">
+        <img src="../../../../assets/prods/joke.jpg" />
+      </div>
+    </div>
+
+    <div class="text">
+      <h1>{{ product.name.toUpperCase() }}</h1>
+      <p class="category">{{ product.category }}</p>
+
+      <div class="custom-rating">
+        <app-rating [product]="product"></app-rating>
+      </div>
+
+      <mat-divider></mat-divider>
+      <br />
+      <p *ngIf="product.discount === 0">&euro;{{ product.price.toFixed(2) }}</p>
+      <div *ngIf="product.discount > 0">
+        <del style="font-size: x-small; color: rgb(231, 62, 0)"
+          >&euro;{{ product.price.toFixed(2) }}</del
+        >
+        <p>&euro;{{ salePrice.toFixed(2) }}</p>
+      </div>
+      <br />
+      <div style="display: flex">
+        <p>Tutti i prodotti includono l'</p>
+        <p style="color: #6669ff; cursor: pointer">IVA</p>
+      </div>
+      <br />
+      <p>{{ product.description }}</p>
+      <br />
+      <p *ngIf="hasColors">
+        Colore: <b>{{ color.toString().toLowerCase() }}</b>
+      </p>
+      <p>
+        Stock: <b>{{ maxQuantity }}</b>
+      </p>
+      <div *ngIf="hasColors" class="colors">
+        <p
+          *ngFor="let color of variant"
+          (click)="onSelectedVariant(color)"
+          [matTooltip]="color.toString()"
+          [style.backgroundColor]="color.toString()"
+        ></p>
+      </div>
+      <br />
+      <p>Quantità</p>
+      <div class="quantity">
+        <p (click)="onSelectQuantity('remove')">-</p>
+        <input type="text" readonly [value]="quantity" />
+        <p (click)="onSelectQuantity('add')">+</p>
+        <button (click)="addToCart(color)" mat-flat-button color="primary">
+          Aggiungi al carrello
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="suggested-products">
+    <app-custom-paginator
+      [products]="suggestedProd"
+      [prodsLength]="suggestedProd.length"
+      (updatedFatherProducts)="updatedProducts($event)"
+    >
+    </app-custom-paginator>
+  </div>
+</div>

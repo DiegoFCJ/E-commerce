@@ -1,0 +1,35 @@
+<div 
+  class="custom-card material-shadow-hover" 
+  
+  [style.width]="widthOverride"
+  [style.height]="heightOverride"
+  >
+  <div *ngIf="product.discount > 0" class="discount">
+    -{{ product.discount }}%
+  </div>
+
+  <div
+    (click)="goToDetail()"
+    class="custom-card-head"
+    [style.background-image]="'url(../../../../../assets/prods/joke.jpg)'"
+  >
+    <div class="product-name">{{ product.name | uppercase }}</div>
+  </div>
+
+  <div class="custom-card-body">
+    <app-rating [product]="product"></app-rating>
+    <div class="custom-card-footer">
+      <p *ngIf="product.discount === 0">&euro;{{ product.price.toFixed(2) }}</p>
+      <div style="margin-top: -18px" *ngIf="product.discount > 0">
+        <del style="font-size:small; color: rgb(231, 62, 0)"
+          >&euro;{{ product.price.toFixed(2) }}</del
+        >
+        <p>&euro;{{ salePrice.toFixed(2) }}</p>
+      </div>
+
+      <button mat-icon-button class="cart-btn" (click)="addToCart()">
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

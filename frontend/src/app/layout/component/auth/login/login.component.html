@@ -1,0 +1,76 @@
+<div class="flex">
+  <div class="form">
+    <h1>Accedi</h1>
+    <p style="margin-top: 5px">Entra nella nostra community!</p>
+  
+    <app-social-sign [signType]="signType" [rememberMe]="rememberMe"></app-social-sign>
+
+    <p style="color: gray;margin-block: 20px;">- o -</p>
+    <hr>
+
+    <form [formGroup]="userFormLogin" (ngSubmit)="onSubmit()">
+      <div class="form-1">
+        <p>
+          <mat-form-field style="width: 385px" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              placeholder="Username"
+              id="username"
+              formControlName="username"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field style="width: 385px" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              id="password"
+              formControlName="password"
+              type="password"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+
+      <div class="checkbox">
+        <mat-checkbox formControlName="rememberMe"
+          ><p style="font-size: 0.7em">Ricordami</p></mat-checkbox
+        >
+      </div>
+
+      <button
+        class="submitbutton buttons-hover"
+        mat-flat-button
+        color="primary"
+        [disabled]="!userFormLogin.valid"
+      >
+        Accedi
+      </button>
+    </form>
+
+    <div class="redirectLink">
+      <p>Password dimenticata?</p>
+      <p 
+        class="btns-links"
+        (click)="passwordRecovery()">
+        Recupero Password
+      </p>
+    </div>
+
+    <div class="redirectLink">
+      <p>Non hai un account?</p>
+      <p 
+        class="btns-links"
+        routerLink="/OfficeOasis/auth/register">
+        Registrati!
+      </p>
+    </div>
+
+  </div>
+  <div class="register-image">
+    <img src="../../../../../assets/auth/side-auth.png" />
+  </div>
+</div>

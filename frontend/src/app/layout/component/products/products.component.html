@@ -1,0 +1,54 @@
+<div class="flex">
+  <div class="top-image"
+    [style.backgroundImage]="'url(../../../../assets/home/top-hero-home-4.jpg)'"
+    >
+    <h1>I NOSTRI PRODOTTI</h1>
+  </div>
+
+  <div class="content">
+
+    <div class="page-body">
+
+      <div class="middle-bar">
+        <!-- TODO -->  
+        <app-search-bar 
+          [customHeight]="'48px'"
+          [products]="products"
+          [pageTotalSize]="pageTotalSize"
+          [visibleProducts]="visibleProducts"
+          [searchRequest]="searchRequest"
+          [products]="products"
+          (updateSearchRequest)="updateSearchRequest($event)"
+          (loadOrUpdateSearchedProducts)="updatedSearchedProducts($event)"
+          >
+        </app-search-bar>
+
+        <app-custom-paginator 
+          [products]="products"
+          [prodsLength]="products.length"
+          (updatedFatherProducts)="updatedProducts($event)"
+          >
+        </app-custom-paginator>
+      </div>
+
+      <div *ngIf="products.length <= 0"  class="no-product-found">
+        <h1 style="margin-right: 10px;">OOPS!</h1>
+        <h2>NON CI SONO PRODOTTI AL MOMENTO...</h2>
+      </div>
+    
+      <div 
+        *ngIf="products"
+        class="cards"
+        style="margin-inline: -1rem;">
+        <app-cards 
+          [product]="product" 
+          [widthOverride]="'208px'" 
+          [heightOverride]="'274px'" 
+          *ngFor="let product of visibleProducts">
+        </app-cards>
+      </div>
+
+    </div>
+
+  </div>
+</div>

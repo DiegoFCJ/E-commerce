@@ -1,0 +1,166 @@
+<div class="cust-form-alignment">
+  <form [formGroup]="addressForm" class="custom-form">
+    <mat-form-field class="custom-full-width">
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Nome"
+        formControlName="name"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('name')?.invalid && addressForm.get('name')?.touched
+        "
+      >
+        Il nome è obbligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Cognome</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Cognome"
+        formControlName="surname"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('surname')?.invalid &&
+          addressForm.get('surname')?.touched
+        "
+      >
+        Il cognome è obbligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Indirizzo</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Indirizzo"
+        formControlName="address"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('address')?.invalid &&
+          addressForm.get('address')?.touched
+        "
+      >
+        L'indirizzo è obbligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Citta' di residenza</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Citta' di residenza"
+        formControlName="residenceCity"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('residenceCity')?.invalid &&
+          addressForm.get('residenceCity')?.touched
+        "
+      >
+        Il citta' di residenza è obbligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Provincia</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Provincia"
+        formControlName="province"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('province')?.invalid &&
+          addressForm.get('province')?.touched
+        "
+      >
+        La Provincia è obbligatoria
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Cap</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Cap"
+        formControlName="cap"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('cap')?.invalid && addressForm.get('cap')?.touched
+        "
+      >
+        Il cap è obbligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Numero di telefono</mat-label>
+      <input
+        matInput
+        type="text"
+        autocomplete="true"
+        autocapitalize="true"
+        placeholder="Numero di telefono"
+        formControlName="phoneNumber"
+      />
+      <mat-error
+        *ngIf="
+          addressForm.get('phoneNumber')?.invalid &&
+          addressForm.get('phoneNumber')?.touched
+        "
+      >
+        Il Numero di telefono è obbligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="custom-full-width">
+      <mat-label>Nazionalità</mat-label>
+      <mat-select placeholder="Nazionalità" formControlName="nationality">
+        <mat-option *ngFor="let nation of nationalities" [value]="nation">
+          {{ nation }}
+        </mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="
+          addressForm.get('nationality')?.invalid &&
+          addressForm.get('nationality')?.touched
+        "
+      >
+        La nazionalità è obbligatoria
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <button
+    class="btn-create-anag"
+    mat-raised-button
+    color="primary"
+    (click)="fetchData()"
+  >
+    Crea
+  </button>
+</div>

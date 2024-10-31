@@ -1,0 +1,78 @@
+<div class="cont-card">
+  <div class="tile-container">
+    <div [ngSwitch]="menuItem">
+      <div *ngSwitchCase="'chartSellings'">
+        <div class="center-creation">
+          <h4>Grafico Prodotti</h4>
+          <app-chart-sellings></app-chart-sellings>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'viewProfileData'">
+        <div class="center-creation" *ngIf="isAnagInDB; else createAnag">
+          <h4 class="top-m-fix">Dati Profilo</h4>
+          <app-view-anagraphic
+            [foundAnagraphic]="foundAnagraphic"
+          ></app-view-anagraphic>
+        </div>
+
+        <ng-template #createAnag>
+          <div class="center-creation">
+            <h4>Crea Anagrafica</h4>
+            <app-create-anagraphic [user]="user"></app-create-anagraphic>
+          </div>
+        </ng-template>
+      </div>
+
+      <div *ngSwitchCase="'viewAddressesData'">
+        <div *ngIf="isOneAddressInDB; else createAddress">
+          <div class="top-m-fix addr-cust-displ">
+            <h4>I Tuoi Indirizzi</h4>
+            <app-add-new-addr-btn></app-add-new-addr-btn>
+          </div>
+          <app-view-addresses
+            [foundAddresses]="foundAddresses"
+          ></app-view-addresses>
+        </div>
+
+        <ng-template #createAddress>
+          <div class="center-creation" *ngIf="isAnagInDB; else createAnag">
+            <div class="center-creation">
+              <h4>Crea Indirizzo</h4>
+              <app-create-addresses
+                [foundAnagraphic]="foundAnagraphic"
+              ></app-create-addresses>
+            </div>
+          </div>
+
+          <ng-template #createAnag>
+            <div class="center-creation">
+              <h4>Crea Anagrafica</h4>
+              <app-create-anagraphic [user]="user"></app-create-anagraphic>
+            </div>
+          </ng-template>
+        </ng-template>
+      </div>
+
+      <div *ngSwitchCase="'createNewAddress'">
+        <div class="center-creation">
+          <h4>Crea Indirizzo</h4>
+          <app-create-addresses
+            [foundAnagraphic]="foundAnagraphic"
+          ></app-create-addresses>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'privacy-info'">
+        <div class="center-creation">
+          <h4>Informativa Sulla Privacy</h4>
+          <app-pdf-viewer></app-pdf-viewer>
+        </div>
+      </div>
+
+      <div *ngSwitchDefault>
+        <h1 style="margin: 23.2vh">La Selezione non e' valida</h1>
+      </div>
+    </div>
+  </div>
+</div>
